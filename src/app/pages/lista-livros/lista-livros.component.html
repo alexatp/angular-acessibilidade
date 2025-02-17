@@ -8,12 +8,15 @@
   </form>
   <p>Busque por assunto, autoria, nome...</p>
   @if (mensagemErro) {
-  <section class="resultados mensagem-erro">
+  <section
+  role="alert"
+  aria-label="Mensagem de erro"
+  class="resultados mensagem-erro">
     {{ mensagemErro }}
   </section>
   }
   @if (livrosEncontrados$ | async; as listaLivros) {
-  <section class="resultados">
+  <section       aria-label="Resultados da busca" class="resultados">
     {{ livrosResultado.totalItems }} resultados encontrados
   </section>
   <ul class="container-card">
